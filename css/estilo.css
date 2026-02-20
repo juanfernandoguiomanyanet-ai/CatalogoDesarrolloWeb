@@ -242,3 +242,99 @@ body {
         flex-direction: column;
     }
 }
+
+
+/* ── Contacto Dropdown ── */
+.contacto-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.contacto-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  padding: 0;
+}
+
+.contacto-popup {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+  min-width: 160px;
+  z-index: 999;
+  animation: popupFade 0.18s ease;
+}
+
+.contacto-popup::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #fff;
+}
+
+/* Ya NO usamos :hover, ahora usamos una clase .activo */
+.contacto-popup.activo {
+  display: block;
+}
+
+@keyframes popupFade {
+  from { opacity: 0; transform: translateX(-50%) translateY(-5px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.contacto-popup p {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #aaa;
+  margin-bottom: 0.7rem;
+  font-family: sans-serif;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.88rem;
+  font-family: sans-serif;
+  font-weight: 500;
+  padding: 0.4rem 0.5rem;
+  border-radius: 7px;
+  transition: background 0.15s;
+}
+
+.social-link:hover { background: #f4f4f4; }
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.social-link.instagram svg { fill: #E1306C; }
+.social-link.facebook  svg { fill: #1877F2; }
+.social-link.gmail     svg { fill: #EA4335; }
+.social-link.whatsapp  svg { fill: #25D366; }

@@ -78,3 +78,23 @@ function renderProductos(lista) {
 document.addEventListener("DOMContentLoaded", () => {
     renderProductos(productos);
 });
+
+
+  const btn = document.querySelector('.contacto-btn');
+  const popup = document.querySelector('.contacto-popup');
+
+  // Abre/cierra al hacer clic en el botón
+  btn.addEventListener('click', function(e) {
+    e.stopPropagation();
+    popup.classList.toggle('activo');
+  });
+
+  // Cierra si haces clic en cualquier otro lado
+  document.addEventListener('click', function() {
+    popup.classList.remove('activo');
+  });
+
+  // Evita que clic dentro del popup lo cierre
+  popup.addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
