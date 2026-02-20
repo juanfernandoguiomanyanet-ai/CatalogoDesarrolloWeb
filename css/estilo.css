@@ -150,7 +150,7 @@ body {
  .pincel-deco {
     position: absolute;
     top: 30%;
-    left: 25%;;
+    left: 30%;;
     width: 600px;
     z-index: 0;
  }
@@ -219,8 +219,21 @@ body {
         margin-bottom: 20px;
     }
 
+    .main{
+        margin-top: 120vh;
+    }
+
+    .recomendaciones h2 {
+        font-size: 30px;
+    }
+
     .grid-productos {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .pincel-deco {
+        width: 300px;
+        top: 40%;
+        left: 50%;
     }
 
     .cards {
