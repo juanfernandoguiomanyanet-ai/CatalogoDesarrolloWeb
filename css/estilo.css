@@ -68,10 +68,10 @@ body {
 }
 
 .hero-img img {
-    max-width: 100%;
     height: auto;
     border-radius: 10px;
     border-radius: 15px;
+    width: 50vw;
 }
 
 .main{
@@ -148,13 +148,14 @@ body {
     line-height: 30px;
 }
 
- .pincel-deco {
-    position: absolute;
-    top: 30%;
-    left: 30%;;
-    width: 600px;
-    z-index: 0;
- }
+.pincel-deco {
+        position: absolute;
+        z-index: 0;
+        left: auto;
+        right: auto;
+        transform: translateX(-50%);
+        height: 50%;
+}
 .productos {
     padding: 40px 60px;
 }
@@ -232,10 +233,12 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
     .pincel-deco {
-        width: 300px;
-        top: 40%;
-        left: 50%;
-        z-index: -1;
+        position: absolute;
+        z-index: 0;
+        left: auto;
+        right: auto;
+        transform: translateX(-50%);
+        height: 50%;
     }
 
     .cards {
