@@ -4,15 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Papelería Sol y Luna</title>
-
-    <link rel="stylesheet" href="css/estilo.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Raleway:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+    <title>Carrito - Papelería Online</title>
+    <link rel="stylesheet" href="css/carrito.css">
 </head>
 
 <body>
-
     <header class="navbar">
         <div class="logo">SOL Y LUNA</div>
         <nav>
@@ -65,41 +61,17 @@
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>PAPELERÍA SOL Y LUNA</h1>
-            <p>
-                Encuentra los mejores productos escolares y de oficina. <br>
-                ¡Calidad, economía y compromiso con el medio ambiente <br>
-                en cada uno de los productos!
-            </p>
-        </div>
 
-        <div class="hero-img">
-            <img src="imagenes/img/Oficina.jpg" alt="Papelería">
-        </div>
-    </section>
-
-    <section class="main">
-        <section class="buscador">
-            <input type="text" placeholder="Buscar producto">
+    <main>
+        <section id="carrito">
+            <div id="lista-carrito"></div>
+            <h2>Total: $<span id="total">0</span></h2>
+            <button id="finalizar">Finalizar Compra</button>
         </section>
+    </main>
 
-        <section class="recomendaciones">
-            <h2>NUESTROS DESCUENTOS</h2>
+    <script src="javascript/carrito.js"></script>
 
-            <div class="cards" id="contenedor-descuentos"></div>
-
-            <img src="imagenes/img/Pincel.png" class="pincel-deco" alt="pincel">
-        </section>
-
-        <section class="productos">
-            <div class="grid-productos" id="contenedor-productos">
-
-            </div>
-        </section>
-    </section>
-    <script src="javascript/productos.js"> </script>
 </body>
 
 </html>

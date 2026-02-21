@@ -68,10 +68,10 @@ body {
 }
 
 .hero-img img {
-    max-width: 100%;
     height: auto;
     border-radius: 10px;
     border-radius: 15px;
+    width: 50vw;
 }
 
 .main{
@@ -126,17 +126,18 @@ body {
 
 .cards {
     display: flex;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-.card1,.card2,.card3,.card4 {
+.card-producto-descuento {
     flex: 1;
     backdrop-filter: blur(0.4rem);
     border: 1px solid rgb(255, 255, 255);
     box-shadow: 0 8px 32px rgba(52, 83, 62, 0.2);
     height: 200px;
-    min-width:30px;
+    min-width: 220px;
     border-radius: 15px;
 
     display: flex;
@@ -145,16 +146,20 @@ body {
     align-items: center;    
     text-align: center;   
     letter-spacing: 1px;   
-    line-height: 30px;
+    line-height: 25px;
+
+    background: rgba(255, 255, 255, 0.05);
+    color: #e8e1d8;
 }
 
- .pincel-deco {
-    position: absolute;
-    top: 30%;
-    left: 30%;;
-    width: 600px;
-    z-index: 0;
- }
+.pincel-deco {
+        position: absolute;
+        z-index: 0;
+        left: auto;
+        right: auto;
+        transform: translateX(-50%);
+        height: 50%;
+}
 .productos {
     padding: 40px 60px;
 }
@@ -232,13 +237,107 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
     .pincel-deco {
-        width: 300px;
-        top: 40%;
-        left: 50%;
-        z-index: -1;
+        position: absolute;
+        z-index: 0;
+        left: auto;
+        right: auto;
+        transform: translateX(-50%);
+        height: 50%;
     }
 
     .cards {
         flex-direction: column;
     }
 }
+.contacto-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.contacto-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  padding: 0;
+}
+
+.contacto-popup {
+  display: none;
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.15);
+  min-width: 160px;
+  z-index: 999;
+  animation: popupFade 0.18s ease;
+}
+
+.contacto-popup::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #fff;
+}
+
+.contacto-popup.activo {
+  display: block;
+}
+
+@keyframes popupFade {
+  from { opacity: 0; transform: translateX(-50%) translateY(-5px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.contacto-popup p {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #177925;
+  margin-bottom: 0.7rem;
+  font-family: sans-serif;
+}
+
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.88rem;
+  font-family: sans-serif;
+  font-weight: 500;
+  padding: 0.4rem 0.5rem;
+  border-radius: 7px;
+  transition: background 0.15s;
+}
+
+.social-link:hover { background: #f4f4f4; }
+
+.social-link svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.social-link.instagram svg { fill: #E1306C; }
+.social-link.facebook  svg { fill: #1877F2; }
+.social-link.gmail     svg { fill: #EA4335; }
+.social-link.whatsapp  svg { fill: #25D366; }
