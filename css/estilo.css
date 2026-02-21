@@ -10,7 +10,6 @@ body {
     color: #E9E0D1;
 }
 
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -132,7 +131,7 @@ body {
 
 .card1,.card2,.card3,.card4 {
     flex: 1;
-    backdrop-filter: blur(0.4rem);
+    backdrop-filter: blur(0.6rem);
     border: 1px solid rgb(255, 255, 255);
     box-shadow: 0 8px 32px rgba(52, 83, 62, 0.2);
     height: 200px;
@@ -166,7 +165,7 @@ body {
 }
 
 .producto {
-    backdrop-filter: blur(0.4rem);
+    backdrop-filter: blur(0.6rem);
     border: 1px solid rgb(255, 255, 255);
     box-shadow: 0 8px 32px rgba(52, 83, 62, 0.2);
     padding: 20px;
