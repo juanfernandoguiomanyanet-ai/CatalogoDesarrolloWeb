@@ -58,23 +58,77 @@ const productos = [
     }
 ];
 
+<<<<<<< Updated upstream
 
+=======
+// ── Busqueda ──────────────────────────────────────────────────
+document.addEventListener("DOMContentLoaded", () => {
+    renderProductos(productos);
+
+    const inputBuscar = document.querySelector(".buscador input");
+    if (inputBuscar) {
+        inputBuscar.addEventListener("input", (e) => {
+            const query = e.target.value.toLowerCase();
+            const filtrados = productos.filter(p =>
+                p.nombre.toLowerCase().includes(query) ||
+                p.descripcion.toLowerCase().includes(query)
+            );
+            renderProductos(filtrados);
+        });
+    }
+});
+
+// ── Render catálogo ───────────────────────────────────────────
+>>>>>>> Stashed changes
 function renderProductos(lista) {
     const contenedor = document.getElementById("contenedor-productos");
+    if (!contenedor) return;
+
+    if (lista.length === 0) {
+        contenedor.innerHTML = "<p style='color:white;'>No se encontraron productos.</p>";
+        return;
+    }
 
     contenedor.innerHTML = lista.map(producto => `
         <div class="producto">
             <img src="${producto.imagen}" alt="${producto.nombre}">
             <h3>${producto.nombre}</h3>
+<<<<<<< Updated upstream
             <p>$${producto.precio.toLocaleString()}</p>
             <button data-id="${producto.id}">
+=======
+            <p class="precio">$${producto.precio.toLocaleString()}</p>
+            <p>${producto.descripcion}</p>
+            <button onclick="agregarAlCarrito(${producto.id})">
+>>>>>>> Stashed changes
                 AGREGAR AL CARRITO
             </button>
         </div>
     `).join("");
 }
 
+<<<<<<< Updated upstream
 
 document.addEventListener("DOMContentLoaded", () => {
     renderProductos(productos);
 });
+=======
+// ── Agregar al carrito ────────────────────────────────────────
+function agregarAlCarrito(id) {
+    const producto = productos.find(p => p.id === id);
+    if (!producto) { alert("Producto no encontrado."); return; }
+
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    // Si ya existe, sumar cantidad
+    const existente = carrito.find(p => p.id === id);
+    if (existente) {
+        existente.cantidad += 1;
+    } else {
+        carrito.push({ ...producto, cantidad: 1 });
+    }
+
+    localStorage.setItem("carrito", JSON.stringify(carrito));
+    alert(`✓ ${producto.nombre} agregado al carrito.`);
+}
+>>>>>>> Stashed changes
