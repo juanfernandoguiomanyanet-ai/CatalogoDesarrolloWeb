@@ -57,30 +57,30 @@ const productos = [
     },
     {
         id: 9,
-        nombre: "Pegante en Barra",
+        nombre: "Colbon",
         precio: 3500,
-        imagen: "imagenes/img/Pegante.png",
-        descripcion: "Pegante sólido de secado rápido."
+        imagen: "imagenes/img/pegante.png",
+        descripcion: "Colbon liquido de secado rápido."
     },
     {
         id: 10,
         nombre: "Tijeras Escolares",
         precio: 5000,
-        imagen: "imagenes/img/Tijeras.png",
+        imagen: "imagenes/img/tijeras.png",
         descripcion: "Tijeras de punta redonda."
     },
     {
         id: 11,
-        nombre: "Regla 30cm Transparente",
+        nombre: "Cartulina de Colores",
         precio: 2500,
-        imagen: "imagenes/img/Regla.png",
-        descripcion: "Regla plástica resistente."
+        imagen: "imagenes/img/cartulina.png",
+        descripcion: "Cartulinas de colores resistentes y esteticas."
     },
     {
         id: 12,
-        nombre: "Corrector Líquido",
+        nombre: "Corrector en Cint",
         precio: 3000,
-        imagen: "imagenes/img/Corrector.png",
+        imagen: "imagenes/img/corrector.png",
         descripcion: "Corrector de secado rápido."
     }
 ];
@@ -100,9 +100,30 @@ function renderProductos(lista) {
         </div>
     `).join("");
 }
+function renderDescuentos() {
+
+    const contenedor = document.getElementById("contenedor-descuentos");
+
+    const productosConDescuento = productos.slice(0, 4);
+
+    contenedor.innerHTML = productosConDescuento.map(producto => `
+
+        <div class="card-producto-descuento">
+            <h3>${producto.nombre}</h3>
+            <p>$${producto.precio.toLocaleString()}</p>
+            <p>${producto.descripcion}</p>
+            <button onclick="agregarAlCarrito(${producto.id})">
+                AGREGAR AL CARRITO
+            </button>
+        </div>
+
+    `).join("");
+}
 
 document.addEventListener("DOMContentLoaded", () => {
+
     renderProductos(productos);
+    renderDescuentos();
 
     const inputBusqueda = document.querySelector(".buscador input");
 
@@ -115,6 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         renderProductos(productosFiltrados);
     });
+
 });
 
 function agregarAlCarrito(id) {
@@ -138,3 +160,18 @@ function agregarAlCarrito(id) {
 
     alert(`${producto.nombre} añadido al carrito exitosamente`);
 }
+const btn = document.querySelector('.contacto-btn');
+const popup = document.querySelector('.contacto-popup');
+
+btn.addEventListener('click', function (e) {
+    e.stopPropagation();
+    popup.classList.toggle('activo');
+});
+
+document.addEventListener('click', function () {
+    popup.classList.remove('activo');
+});
+
+popup.addEventListener('click', function (e) {
+    e.stopPropagation();
+});
